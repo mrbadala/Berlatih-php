@@ -1,7 +1,18 @@
 <?php
 function tukar_besar_kecil($string){
-//kode di sini
-}
+    $temp = "";
+    for($i = 0; $i < strlen($string); $i++){
+        $str = $string[$i];
+        if(ctype_alpha($str) && $str === strtolower($str)){
+            $temp .= strtoupper($str);
+        } else if(ctype_alpha($str) && $str === strtoupper($str)){
+            $temp .= strtolower($str);
+        } else{
+            $temp .= $string[$i];
+        };
+    };
+    return $temp;
+};
 
 // TEST CASES
 echo tukar_besar_kecil('Hello World'); // "hELLO wORLD"
