@@ -1,6 +1,16 @@
 <?php
 function tentukan_deret_aritmatika($arr) {
 // kode di sini
+    if (sizeof($arr)<=1) {
+        return true;
+    }
+    $jarak = $arr[1]-$arr[0];
+    for ($i=0; $i < sizeof($arr); $i++) { 
+        if ($arr[$i]+(($arr[$i]-1)*$jarak)==$jarak) {
+            return "false<br>";
+        }
+    }
+    return "true<br>";
 }
 
 // TEST CASES
